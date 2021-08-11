@@ -46,10 +46,10 @@ class MyTime:
             return False
 
     def __add__(self, other): # сложение
-        self.hours += other.hours
-        self.minutes += other.minutes
-        self.seconds += other.seconds
-        return self
+        h = self.hours + other.hours
+        m = self.minutes + other.minutes
+        s = self.seconds + other.seconds
+        return MyTime(hours=h, minutes=m, seconds=s)
 
     def __sub__(self, other): # вычитание
         self.hours -= other.hours
@@ -60,3 +60,4 @@ class MyTime:
 obj_1 = MyTime(str_time= '12:13:14')
 obj_2 = MyTime(hours=22, minutes=32, seconds=52)
 print(obj_1+obj_2)
+print(obj_1)
